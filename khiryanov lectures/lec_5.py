@@ -118,3 +118,13 @@ A = [1, 2, 3, 4, 5]
 left_circle(A, 5)
 print(A)
 
+# решето эратосфена, для отсеивания непростых чисел
+A = [True] * N  # изначально положим что числа простые
+A[0] = A[1] = False # 0 и 1 числа как не простые
+for k in range(2, N):
+    if A[k]:
+        for m in range(2 * k, N, k):
+            A[m] = False
+
+for k in range(N):
+    print(k,'-', "простое" if A[k] else "составное")
