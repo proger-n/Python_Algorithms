@@ -8,15 +8,27 @@
 #
 #
 #
-def matreshka(n):
-    if n == 1:
-        print('Матрешка')
-    else:
-        print('Верх матрешки n=', n)
-        matreshka(n-1)
-        print('Низ матрешки n=', n)
 
-matreshka(10)
+# def matreshka(n):
+#     if n == 1:
+#         print('Матрешка')
+#     else:
+#         print('Верх матрешки n=', n)
+#         matreshka(n-1)
+#         print('Низ матрешки n=', n)
+#
+# matreshka(10)
+
+# факториал числа через рекурсию
+
+def f(n):
+    assert n >= 0, 'Factorial of negative number not defined'  # проверка на входе, выдаст ошибку если не выполнится
+    if n == 0:
+        return 1
+    return f(n-1) * n
+
+print(f(5))
+
 
 
 

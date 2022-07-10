@@ -1,4 +1,4 @@
-# НОД найти для 2 целых неотрицательных чисел
+# НОД найти для 2 целых неотрицательных чисел, grand common divisor
 
 def NaiveGCD(a, b):
     '''поиск перебором всех возможных делителей'''
@@ -20,6 +20,11 @@ def EuclidGCD(a, b):
         return EuclidGCD(a % b, b)
     if b >= a:
         return EuclidGCD(a, b % a)
+
+
+def EuclidGCD_short(a, b):
+    '''поиск по алгоритму Евклида лаконично'''
+    return a if b == 0 else EuclidGCD_short(b, a%b)
 
 
 def test_gcd(gcd_algorithm):
@@ -59,6 +64,7 @@ def test_gcd(gcd_algorithm):
 def main():
     test_gcd(NaiveGCD)
     test_gcd(EuclidGCD)
+    test_gcd(EuclidGCD_short)
  #   a, b = map(int, input().split())
 
 
